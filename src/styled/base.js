@@ -52,6 +52,10 @@ export const Title = styled.h1.attrs({ className: 'no-select' })`
   text-align: center;
   font-family: Quicksand, sans-serif;
   letter-spacing: 2px;
+  font-size: 2.5em;
+  @media screen and (max-width: 400px) {
+    margin: 7px 0 30px 20px;
+  }
 `;
 
 export const Label = styled.label`

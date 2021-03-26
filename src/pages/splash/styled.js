@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import logo from 'assets/png/logo200.png';
+import logoWhite from 'assets/png/logo200-white.png';
+import { CONST_THEMES } from '../../constant/themes';
 
 export const Container = styled.div`
   -webkit-animation: fadein 0.5s;
@@ -9,7 +12,7 @@ export const Container = styled.div`
   -moz-animation-delay: 1s;
   -o-animation-delay: 1s;
   animation-delay: 1s;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   display: flex;
@@ -55,4 +58,16 @@ export const Text = styled.label`
   font-size: 28px;
   font-weight: 700;
   font-family: Helvetica, sans-serif;
+`;
+
+export const Logo = styled.img.attrs(props => ({
+  src: props.theme.type === CONST_THEMES.DARK ? logoWhite : logo,
+  alt: 'logo',
+}))`
+  max-width: 100px;
+  margin-bottom: 50px;
+  @media screen and (max-height: 1280px) {
+    max-width: 14vh;
+    max-height: 120px;
+  }
 `;

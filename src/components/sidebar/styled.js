@@ -52,7 +52,7 @@ export const Title = styled.div`
 `;
 
 export const ToggleButton = styled.button.attrs({ type: 'button', 'aria-label': 'icon' })`
-  left: 30px;
+  left: 20px;
   top: 20px;
   width: 30px;
   height: 30px;
