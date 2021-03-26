@@ -1,0 +1,48 @@
+[
+ {
+  "id": 1,
+  "order": 1,
+  "label": "Menu 1",
+  "disabled": false,
+  "subMenu": [
+   {
+    "id": 1,
+    "label": "Option 1",
+    "disabled": true,
+    "path": "/path1"
+   },
+   {
+    "id": 2,
+    "label": "Option 2",
+    "disabled": true,
+    "path": "/path2"
+   },
+   {
+    "id": 3,
+    "label": "Option 3",
+    "disabled": true,
+    "path": "/path3"
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "order": 1,
+  "label": "Menu 2",
+  "disabled": false,
+  "subMenu": [
+   {
+    "id": 1,
+    "label": "Option 1",
+    "disabled": true,
+    "path": "/path4"
+   },
+   {
+    "id": 2,
+    "label": "Option 2",
+    "disabled": true,
+    "path": "/path5"
+   }
+  ]
+ }
+]

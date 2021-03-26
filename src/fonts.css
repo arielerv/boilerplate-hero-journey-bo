@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Bebas';
+    src: url('./assets/fonts/bebas.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('./assets/fonts/helvetica-neue.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('./assets/fonts/oswald-regular.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('./assets/fonts/quicksand.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./assets/fonts/roboto-regular.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
