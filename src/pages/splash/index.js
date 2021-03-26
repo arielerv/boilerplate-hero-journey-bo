@@ -3,7 +3,7 @@ import { push } from 'connected-react-router';
 import { useDispatch } from 'react-redux';
 import { routes } from 'constant';
 
-import { Container, Text } from './styled';
+import { Container, Text, Logo } from './styled';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -11,6 +11,7 @@ const Home = () => {
 
   return (
     <Container>
+      <Logo />
       <Text>Hero&apos;s Journey</Text>
     </Container>
   );

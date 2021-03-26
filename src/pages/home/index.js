@@ -3,9 +3,8 @@ import { useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
 import { routes } from 'constant';
 import { CustomButton } from 'styled/buttons';
-import { Title } from 'styled/base';
 
-import { Container } from './styled';
+import { Container, Title } from './styled';
 
 const Home = () => {
   const dispatch = useDispatch();

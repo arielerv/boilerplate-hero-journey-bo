@@ -1,5 +1,6 @@
 const themes = {
   darkTheme: {
+    type: 'dark',
     black: '#000',
     white: '#fff',
     base: '#000',
@@ -11,10 +12,11 @@ const themes = {
     middle: '#719aa0',
   },
   lightTheme: {
+    type: 'light',
     black: '#000',
     white: '#fff',
     base: '#fff',
-    deep: '#EE F4ED',
+    deep: '#EEF4ED',
     accent: '#8DA9C4',
     highAccent: '#0B2545',
     opposite: '#454a55',
