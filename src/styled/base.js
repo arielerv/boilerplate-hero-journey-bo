@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Row = styled.div`
   display: flex;
@@ -56,19 +56,29 @@ export const Title = styled.h1.attrs({ className: 'no-select' })`
   @media screen and (max-width: 400px) {
     margin: 7px 0 30px 20px;
   }
+  ${({ $bsStyle }) => $bsStyle || ''}
+`;
+
+const Centered = css`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 `;
 
 export const Label = styled.label`
+  color: ${props => props.theme.opposite};
   font-size: 14px;
   text-transform: uppercase;
   margin: 0;
   font-family: 'Helvetica', sans-serif;
-  font-weight: bold;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   letter-spacing: 0.05em;
+  ${({ bold }) => (bold ? 'font-weight: bold' : '')};
+  ${({ centered }) => (centered ? Centered : '')};
   ${({ $bsStyle }) => $bsStyle || ''}
 `;
 

@@ -69,6 +69,74 @@ const validateTokenError = (state, { error }) => ({
   error,
   isValidatingToken: initialState.isValidatingToken,
 });
+
+const registerRequest = state => ({
+  ...state,
+  isRegistering: true,
+  isRegistered: initialState.isRegistered,
+  error: null,
+  token: null,
+});
+
+const registerSuccess = state => ({
+  ...state,
+  isRegistering: initialState.isRegistering,
+  isRegistered: true,
+  error: initialState.error,
+});
+
+const registerError = (state, { error }) => ({
+  ...state,
+  error,
+  isRegistering: initialState.isRegistering,
+  isRegistered: initialState.isRegistered,
+});
+
+const confirmEmailRequest = state => ({
+  ...state,
+  isConfirming: true,
+  error: initialState.error,
+});
+
+const confirmEmailSuccess = (state, { data }) => ({
+  ...state,
+  data,
+  isConfirming: initialState.isConfirming,
+  error: initialState.error,
+});
+
+const confirmEmailError = (state, { error }) => ({
+  ...state,
+  error,
+  isConfirming: initialState.isConfirming,
+});
+
+const verifyEmailRequest = state => ({
+  ...state,
+  emailExists: initialState.emailExists,
+  isValidatingEmail: true,
+  error: initialState.error,
+});
+
+const verifyEmailSuccess = (state, { emailExists }) => ({
+  ...state,
+  emailExists,
+  isValidatingEmail: initialState.isValidatingEmail,
+  error: initialState.error,
+});
+
+const verifyEmailError = (state, { error }) => ({
+  ...state,
+  error,
+  emailExists: initialState.emailExists,
+  isValidatingEmail: initialState.isValidatingEmail,
+});
+
+const cleanValues = state => ({
+  ...state,
+  ...initialState,
+});
+
 const reducer = createReducer(initialState, {
   [authTypes.AUTH_LOGIN_REQUEST]: loginRequest,
   [authTypes.AUTH_LOGIN_SUCCESS]: loginSuccess,
@@ -81,6 +149,20 @@ const reducer = createReducer(initialState, {
   [authTypes.AUTH_VALIDATE_TOKEN_REQUEST]: validateTokenRequest,
   [authTypes.AUTH_VALIDATE_TOKEN_SUCCESS]: validateTokenSuccess,
   [authTypes.AUTH_VALIDATE_TOKEN_ERROR]: validateTokenError,
+
+  [authTypes.AUTH_REGISTER_REQUEST]: registerRequest,
+  [authTypes.AUTH_REGISTER_SUCCESS]: registerSuccess,
+  [authTypes.AUTH_REGISTER_ERROR]: registerError,
+
+  [authTypes.AUTH_CONFIRM_EMAIL_REQUEST]: confirmEmailRequest,
+  [authTypes.AUTH_CONFIRM_EMAIL_SUCCESS]: confirmEmailSuccess,
+  [authTypes.AUTH_CONFIRM_EMAIL_ERROR]: confirmEmailError,
+
+  [authTypes.AUTH_VERIFY_EMAIL_REQUEST]: verifyEmailRequest,
+  [authTypes.AUTH_VERIFY_EMAIL_SUCCESS]: verifyEmailSuccess,
+  [authTypes.AUTH_VERIFY_EMAIL_ERROR]: verifyEmailError,
+
+  [authTypes.AUTH_CLEAN_VALUES]: cleanValues,
 });
 
 export default reducer;

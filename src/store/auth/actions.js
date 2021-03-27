@@ -12,6 +12,20 @@ const { Types, Creators } = createActions({
   authValidateTokenRequest: ['token'],
   authValidateTokenSuccess: ['profile', 'token'],
   authValidateTokenError: ['error'],
+
+  authRegisterRequest: ['values'],
+  authRegisterSuccess: [null],
+  authRegisterError: ['error'],
+
+  authConfirmEmailRequest: ['token'],
+  authConfirmEmailSuccess: ['profile', 'token'],
+  authConfirmEmailError: ['error'],
+
+  authVerifyEmailRequest: ['email'],
+  authVerifyEmailSuccess: ['emailExists'],
+  authVerifyEmailError: ['error'],
+
+  authCleanValues: [null],
 });
 
 export const authTypes = Types;

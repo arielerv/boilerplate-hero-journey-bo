@@ -8,7 +8,7 @@ export function* setThemeRequest({ theme }) {
     yield setTheme(theme);
     yield put(actionsCreator.userSetThemeSuccess(theme));
   } catch (error) {
-    yield put(actionsCreator.statusError('Server error'));
+    yield put(actionsCreator.userSetThemeError('Server error'));
   }
 }
 

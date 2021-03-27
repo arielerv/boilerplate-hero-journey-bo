@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import authCreator from 'store/auth/actions';
-import statusCreator from 'store/status/actions';
 import { Formik } from 'formik';
 import { routes } from 'constant';
 import { LinkButton } from 'styled/buttons';
@@ -18,10 +17,6 @@ const Login = () => {
   const handleSubmit = values => {
     return dispatch(authCreator.authLoginRequest(values.email, values.password));
   };
-
-  useEffect(() => {
-    dispatch(statusCreator.statusRequest());
-  }, []);
 
   return (
     <Container>

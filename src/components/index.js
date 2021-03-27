@@ -7,6 +7,7 @@ import Sidebar from './sidebar';
 import MessageError from './message-error';
 import LoadingButton from './loading-button';
 import Switch from './switch';
+import Check from './check';
 
 export {
   Footer,
@@ -18,4 +19,5 @@ export {
   MessageError,
   LoadingButton,
   Switch,
+  Check,
 };

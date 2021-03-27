@@ -1,5 +1,5 @@
-export const getData = state => state.status.data;
+export const getData = state => state.user.data;
 
-export const getIsLoading = state => state.status.isLoading;
+export const getIsLoading = state => state.user.isLoading;
 
-export const getError = state => state.status.error;
+export const getError = state => state.user.error;
