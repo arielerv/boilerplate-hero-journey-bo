@@ -28,7 +28,7 @@ const Sidebar = ({ open, setOpen, children }) => {
         <span className={`bot ${open ? 'open' : ''}`} />
       </ToggleButton>
       <Container className="no-select" isOpen={open}>
-        <WrapperContent visibility={open}>
+        <WrapperContent>
           <Title className="no-select">Hero&apos;s journey</Title>
           <Content className="no-select">{children}</Content>
         </WrapperContent>

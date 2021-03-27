@@ -12,6 +12,7 @@ export const Container = styled.div`
   flex: 1;
   z-index: 9999999999999999999999;
   overflow: hidden;
-  background: ${({ background }) => background || 'transparent'};
+  background: ${props => props.theme.deep};
+  color: ${props => props.theme.opposite};
   ${({ $bsStyle }) => $bsStyle || ''}
 `;

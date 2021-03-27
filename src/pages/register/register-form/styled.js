@@ -4,8 +4,8 @@ import { Form as FormFormik } from 'formik';
 export const Form = styled(FormFormik).attrs({ noValidate: true })`
   display: flex;
   flex-direction: column;
-  text-align: center;
-  max-width: 280px;
-  margin-top: 2vh;
+  flex: 1;
   width: 100%;
+  padding: 0 38px;
+  align-items: center;
 `;

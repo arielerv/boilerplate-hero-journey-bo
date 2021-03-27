@@ -27,11 +27,11 @@ const http = create(
 
 export const setAuthorization = token => {
   setToken(token);
-  http.setHeader('Authorization', `Bearer ${token}`);
+  return http.setHeader('Authorization', `Bearer ${token}`);
 };
 
 const navMonitor = async response => {
-  const isAuthRequest = response.config.url === '/auth/login';
+  const isAuthRequest = response.config.url === '/publicApi/auth/login';
   if (response.status === 401 && !isAuthRequest) {
     clearToken();
     window.location.href = '/';
