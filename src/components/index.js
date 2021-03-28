@@ -8,6 +8,7 @@ import MessageError from './message-error';
 import LoadingButton from './loading-button';
 import Switch from './switch';
 import Check from './check';
+import CustomSelect from './custom-select';
 
 export {
   Footer,
@@ -20,4 +21,5 @@ export {
   LoadingButton,
   Switch,
   Check,
+  CustomSelect,
 };

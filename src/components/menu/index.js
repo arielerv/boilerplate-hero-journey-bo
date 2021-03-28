@@ -25,6 +25,9 @@ const Menu = ({ onRedirect, onLogout, show }) => {
         <SidebarItem id={routes.MAIN} onClick={onClickSidebar} active={getPathName(routes.MAIN)}>
           Menu
         </SidebarItem>
+        <SidebarItem id={routes.OTHER} onClick={onClickSidebar} active={getPathName(routes.OTHER)}>
+          Other
+        </SidebarItem>
         <SidebarItem
           id={routes.PROFILE}
           onClick={onClickSidebar}
