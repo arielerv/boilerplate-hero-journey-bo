@@ -3,10 +3,10 @@ import { Navigation } from 'components';
 
 import { Container } from './styled';
 
-const AnotherPage = () => (
+const Main = () => (
   <Container>
     <Navigation />
   </Container>
 );
 
-export default AnotherPage;
+export default Main;

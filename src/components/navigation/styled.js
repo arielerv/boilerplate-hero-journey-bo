@@ -49,7 +49,6 @@ export const Item = styled.button.attrs({ type: 'button' })`
     outline: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
-    background: ${props => props.theme.black};
     color: ${props => props.theme.white};
   }
 `;

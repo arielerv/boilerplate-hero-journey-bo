@@ -1,21 +1,46 @@
 [
  {
   "id": 1,
-  "order": 1,
   "label": "Menu 1",
   "disabled": false,
   "subMenu": [
    {
     "id": 1,
-    "label": "Option 1",
-    "disabled": true,
-    "path": "/path1"
+    "label": "Sub-Menu 1",
+    "disabled": false,
+    "subMenu": [
+      {
+       "id": 1,
+       "label": "Sub-Menu 1-1",
+       "disabled": true,
+       "path": "/subPath1"
+      },
+      {
+       "id": 2,
+       "label": "Sub-Menu 1-2",
+       "disabled": true,
+       "path": "/subPath2"
+      }
+     ]
    },
    {
     "id": 2,
-    "label": "Option 2",
-    "disabled": true,
-    "path": "/path2"
+    "label": "Sub-Menu 2",
+    "disabled": false,
+    "subMenu": [
+     {
+      "id": 1,
+      "label": "Sub-Menu 2-1",
+      "disabled": true,
+      "path": "/subPath1"
+     },
+     {
+      "id": 2,
+      "label": "Sub-Menu 2-2",
+      "disabled": true,
+      "path": "/subPath2"
+     }
+    ]
    },
    {
     "id": 3,
