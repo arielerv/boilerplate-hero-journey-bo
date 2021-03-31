@@ -5,7 +5,7 @@ import { CONST_THEMES } from 'constant/themes';
 
 export function* setThemeRequest({ theme }) {
   try {
-    yield setTheme(theme);
+    setTheme(theme);
     yield put(actionsCreator.userSetThemeSuccess(theme));
   } catch (error) {
     yield put(actionsCreator.userSetThemeError('Server error'));
@@ -15,7 +15,7 @@ export function* setThemeRequest({ theme }) {
 export function* getThemeRequest() {
   const storedTheme = getTheme();
   if (!storedTheme) {
-    yield setTheme(CONST_THEMES.DARK);
+    setTheme(CONST_THEMES.DARK);
   }
   yield put(actionsCreator.userGetThemeSuccess(storedTheme));
 }

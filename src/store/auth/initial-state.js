@@ -8,6 +8,7 @@ export const initialState = {
   isRegistering: false,
   isRegistered: false,
   isConfirming: false,
+  isEmailSent: false,
   emailExists: null,
   isValidatingEmail: false,
   register: { name: '', surname: '', email: '', password: '', terms: false },
