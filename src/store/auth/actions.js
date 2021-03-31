@@ -5,7 +5,7 @@ const { Types, Creators } = createActions({
   authLoginSuccess: ['profile', 'token'],
   authLoginError: ['error'],
 
-  authGetTokenRequest: [null],
+  authGetTokenRequest: [],
   authGetTokenSuccess: ['token'],
   authGetTokenError: ['error'],
 
@@ -14,7 +14,7 @@ const { Types, Creators } = createActions({
   authValidateTokenError: ['error'],
 
   authRegisterRequest: ['values'],
-  authRegisterSuccess: [null],
+  authRegisterSuccess: [],
   authRegisterError: ['error'],
 
   authConfirmEmailRequest: ['token'],
@@ -23,7 +23,15 @@ const { Types, Creators } = createActions({
 
   authVerifyEmailRequest: ['email'],
   authVerifyEmailSuccess: ['emailExists'],
-  authVerifyEmailError: ['error'],
+  authVerifyEmailError: ['errorEmail'],
+
+  authRecoveryPasswordRequest: ['email'],
+  authRecoveryPasswordSuccess: [],
+  authRecoveryPasswordError: ['error'],
+
+  authResetPasswordRequest: ['token', 'email', 'password'],
+  authResetPasswordSuccess: [null],
+  authResetPasswordError: ['error'],
 
   authCleanValues: [null],
 });

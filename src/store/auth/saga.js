@@ -6,10 +6,12 @@ import {
   requestRegister,
   requestConfirmEmail,
   requestVerifyEmail,
+  requestRecoveryPassword,
+  requestResetPassword,
 } from 'services/auth';
 import { push } from 'connected-react-router';
 import { setAuthorization } from 'services/http';
-import { routes } from 'constant';
+import { routes, responseMessages } from 'constant';
 import { getToken, clearToken } from 'services/storage';
 import { getResponseError } from 'utils';
 
@@ -25,7 +27,7 @@ export function* login({ email, password }) {
       yield put(actionsCreator.authLoginError(error));
     }
   } catch (error) {
-    yield put(actionsCreator.authLoginError(getResponseError()));
+    yield put(actionsCreator.authLoginError(responseMessages.GENERAL_ERROR));
   }
 }
 
@@ -48,11 +50,11 @@ export function* validateToken({ token }) {
         actionsCreator.authValidateTokenSuccess(response.data.profile, response.data.token)
       );
     } else {
-      yield clearToken();
+      clearToken();
       yield put(actionsCreator.authValidateTokenError(error));
     }
   } catch (error) {
-    yield put(actionsCreator.authValidateTokenError(getResponseError()));
+    yield put(actionsCreator.authValidateTokenError(responseMessages.GENERAL_ERROR));
   }
 }
 
@@ -66,7 +68,7 @@ export function* register({ values }) {
       yield put(actionsCreator.authRegisterError(error));
     }
   } catch (error) {
-    yield put(actionsCreator.authRegisterError(getResponseError()));
+    yield put(actionsCreator.authRegisterError(responseMessages.GENERAL_ERROR));
   }
 }
 
@@ -83,7 +85,7 @@ export function* confirmEmail({ token }) {
       yield put(actionsCreator.authConfirmEmailError(error));
     }
   } catch (error) {
-    yield put(actionsCreator.authConfirmEmailError(getResponseError()));
+    yield put(actionsCreator.authConfirmEmailError(responseMessages.GENERAL_ERROR));
   }
 }
 
@@ -94,10 +96,39 @@ export function* verifyEmail({ email }) {
     if (!error) {
       yield put(actionsCreator.authVerifyEmailSuccess(response.data.emailExists));
     } else {
-      yield put(actionsCreator.authConfirmEmailError(error));
+      yield put(actionsCreator.authVerifyEmailError(error));
     }
   } catch (error) {
-    yield put(actionsCreator.authConfirmEmailError(getResponseError()));
+    yield put(actionsCreator.authVerifyEmailError(responseMessages.GENERAL_ERROR));
+  }
+}
+
+export function* recoveryPassword({ email }) {
+  try {
+    const response = yield call(requestRecoveryPassword, email);
+    const error = yield getResponseError(response);
+    if (!error) {
+      yield put(actionsCreator.authRecoveryPasswordSuccess());
+    } else {
+      yield put(actionsCreator.authRecoveryPasswordError(error));
+    }
+  } catch (error) {
+    yield put(actionsCreator.authRecoveryPasswordError(responseMessages.GENERAL_ERROR));
+  }
+}
+
+export function* resetPassword({ email, token, password }) {
+  try {
+    const response = yield call(requestResetPassword, email, token, password);
+    const error = yield getResponseError(response);
+    if (!error) {
+      yield put(actionsCreator.authResetPasswordSuccess());
+      yield put(push(routes.HOME));
+    } else {
+      yield put(actionsCreator.authResetPasswordError(error));
+    }
+  } catch (error) {
+    yield put(actionsCreator.authResetPasswordError(responseMessages.GENERAL_ERROR));
   }
 }
 
@@ -107,5 +138,7 @@ export function* authSaga() {
   yield takeLatest(authTypes.AUTH_VALIDATE_TOKEN_REQUEST, validateToken);
   yield takeLatest(authTypes.AUTH_REGISTER_REQUEST, register);
   yield takeLatest(authTypes.AUTH_CONFIRM_EMAIL_REQUEST, confirmEmail);
+  yield takeLatest(authTypes.AUTH_RECOVERY_PASSWORD_REQUEST, recoveryPassword);
+  yield takeLatest(authTypes.AUTH_RESET_PASSWORD_REQUEST, resetPassword);
   yield throttle(1000, authTypes.AUTH_VERIFY_EMAIL_REQUEST, verifyEmail);
 }

@@ -11,7 +11,7 @@ import Registered from './registered';
 import validationSchema from './validation-schema';
 import { Container } from './styled';
 
-const Home = () => {
+const Register = () => {
   const dispatch = useDispatch();
   const isRegistered = useSelector(getIsRegistered);
   const emailExists = useSelector(getEmailExists);
@@ -40,4 +40,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Register;

@@ -125,11 +125,50 @@ const verifyEmailSuccess = (state, { emailExists }) => ({
   error: initialState.error,
 });
 
-const verifyEmailError = (state, { error }) => ({
+const verifyEmailError = (state, { errorEmail }) => ({
   ...state,
-  error,
+  errorEmail,
   emailExists: initialState.emailExists,
   isValidatingEmail: initialState.isValidatingEmail,
+});
+
+const recoveryPasswordRequest = state => ({
+  ...state,
+  isLoading: true,
+  isEmailSent: initialState.isEmailSent,
+  error: initialState.error,
+});
+
+const recoveryPasswordSuccess = state => ({
+  ...state,
+  isLoading: initialState.isLoading,
+  isEmailSent: true,
+  error: initialState.error,
+});
+
+const recoveryPasswordError = (state, { error }) => ({
+  ...state,
+  error,
+  isLoading: initialState.isLoading,
+  isEmailSent: initialState.isEmailSent,
+});
+
+const resetPasswordRequest = state => ({
+  ...state,
+  isLoading: true,
+  error: initialState.error,
+});
+
+const resetPasswordSuccess = state => ({
+  ...state,
+  isLoading: initialState.isLoading,
+  error: initialState.error,
+});
+
+const resetPasswordError = (state, { error }) => ({
+  ...state,
+  error,
+  isLoading: initialState.isLoading,
 });
 
 const cleanValues = state => ({
@@ -161,6 +200,14 @@ const reducer = createReducer(initialState, {
   [authTypes.AUTH_VERIFY_EMAIL_REQUEST]: verifyEmailRequest,
   [authTypes.AUTH_VERIFY_EMAIL_SUCCESS]: verifyEmailSuccess,
   [authTypes.AUTH_VERIFY_EMAIL_ERROR]: verifyEmailError,
+
+  [authTypes.AUTH_RECOVERY_PASSWORD_REQUEST]: recoveryPasswordRequest,
+  [authTypes.AUTH_RECOVERY_PASSWORD_SUCCESS]: recoveryPasswordSuccess,
+  [authTypes.AUTH_RECOVERY_PASSWORD_ERROR]: recoveryPasswordError,
+
+  [authTypes.AUTH_RESET_PASSWORD_REQUEST]: resetPasswordRequest,
+  [authTypes.AUTH_RESET_PASSWORD_SUCCESS]: resetPasswordSuccess,
+  [authTypes.AUTH_RESET_PASSWORD_ERROR]: resetPasswordError,
 
   [authTypes.AUTH_CLEAN_VALUES]: cleanValues,
 });

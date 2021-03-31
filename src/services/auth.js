@@ -19,3 +19,11 @@ export const requestConfirmEmail = token => {
 export const requestVerifyEmail = email => {
   return http.post('/publicApi/auth/verifyEmail', { email });
 };
+
+export const requestRecoveryPassword = email => {
+  return http.post('/publicApi/auth/recoveryPassword', { email });
+};
+
+export const requestResetPassword = (email, token, password) => {
+  return http.post('/publicApi/auth/resetPassword', { email, token, password });
+};

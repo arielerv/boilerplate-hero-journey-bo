@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { MessageError, Check, LoadingButton } from 'components';
 import { InputCustom } from 'styled/inputs';
 import { useDispatch, useSelector } from 'react-redux';
-import { getIsRegistering, getEmailExists, getError } from 'store/auth/selectors';
+import { getIsRegistering, getEmailExists, getErrorEmail } from 'store/auth/selectors';
 import actionsCreator from 'store/auth/actions';
 import { VALID_EMAIL } from 'constant/regex';
 
@@ -13,7 +13,7 @@ const RegisterForm = ({ submitForm, values }) => {
   const dispatch = useDispatch();
   const isLoading = useSelector(getIsRegistering);
   const emailExists = useSelector(getEmailExists);
-  const error = useSelector(getError);
+  const errorEmail = useSelector(getErrorEmail);
 
   useEffect(() => {
     if (VALID_EMAIL.test(values.email)) {
@@ -50,6 +50,7 @@ const RegisterForm = ({ submitForm, values }) => {
         messageError={Boolean(emailExists) && emailExists && 'Email is used.'}
       />
       <InputCustom
+        type="password"
         name="password"
         placeholder="Password"
         onKeyDown={e => (e.charCode || e.keyCode) === 13 && submitForm()}
@@ -57,6 +58,7 @@ const RegisterForm = ({ submitForm, values }) => {
       />
       <MessageError name="password" />
       <InputCustom
+        type="password"
         name="confirmPassword"
         placeholder="Confirm password"
         onKeyDown={e => (e.charCode || e.keyCode) === 13 && submitForm()}
@@ -69,7 +71,7 @@ const RegisterForm = ({ submitForm, values }) => {
         $bsStyle={{ margin: '20px 0 30px 0' }}
       />
       <MessageError name="terms" />
-      <MessageError messageError={error} />
+      <MessageError messageError={errorEmail} />
       <LoadingButton type="submit" label="Submit" isLoading={isLoading} />
     </Form>
   );

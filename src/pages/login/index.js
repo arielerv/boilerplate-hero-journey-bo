@@ -12,7 +12,7 @@ import LoginForm from './login-form';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const goToSignUp = () => dispatch(push(routes.REGISTER));
+  const goToPath = e => dispatch(push(e.target.id));
 
   const handleSubmit = values => {
     return dispatch(authCreator.authLoginRequest(values.email, values.password));
@@ -27,8 +27,15 @@ const Login = () => {
           onSubmit={handleSubmit}
           initialValues={{ email: '', password: '' }}
         />
+        <LinkButton
+          id={routes.RECOVERY_PASSWORD}
+          onClick={goToPath}
+          $bsStyle={{ fontSize: '12px' }}
+        >
+          Forgot password?
+        </LinkButton>
         <br />
-        <LinkButton white onClick={goToSignUp}>
+        <LinkButton id={routes.REGISTER} onClick={goToPath}>
           Sign up
         </LinkButton>
       </Content>
