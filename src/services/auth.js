@@ -8,8 +8,8 @@ export const requestValidateToken = token => {
   return http.post('/publicApi/auth/session', { token });
 };
 
-export const requestRegister = values => {
-  return http.post('/publicApi/auth/register', { ...values });
+export const requestRegister = (values, typeConfirm) => {
+  return http.post('/publicApi/auth/register', { ...values, typeConfirm });
 };
 
 export const requestConfirmEmail = token => {

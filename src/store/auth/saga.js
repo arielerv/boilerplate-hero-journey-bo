@@ -11,9 +11,11 @@ import {
 } from 'services/auth';
 import { push } from 'connected-react-router';
 import { setAuthorization } from 'services/http';
-import { routes, responseMessages } from 'constant';
+import { routes, responseMessages, EMAIL } from 'constant';
 import { getToken, clearToken } from 'services/storage';
 import { getResponseError } from 'utils';
+
+const typeConfirm = process.env.REACT_APP_TYPE_CONFIRM;
 
 export function* login({ email, password }) {
   try {
@@ -60,10 +62,15 @@ export function* validateToken({ token }) {
 
 export function* register({ values }) {
   try {
-    const response = yield call(requestRegister, values);
+    const response = yield call(requestRegister, values, typeConfirm);
     const error = yield getResponseError(response);
     if (!error) {
-      yield put(actionsCreator.authRegisterSuccess());
+      if (typeConfirm === EMAIL) {
+        yield put(actionsCreator.authRegisterSuccess());
+      } else {
+        yield put(actionsCreator.authRegisterWithoutConfirmSuccess());
+        yield put(push(routes.LOGIN));
+      }
     } else {
       yield put(actionsCreator.authRegisterError(error));
     }

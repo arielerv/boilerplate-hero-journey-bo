@@ -1,7 +1,8 @@
 {
-  "name": "hero-journery",
-  "version": "0.1.0",
-  "private": true,
+  "name": "hero-journey",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "Boilerplate React - Front End - Hero's Journey",
+  "private": false,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
@@ -35,6 +36,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint-check": "eslint . --ext .js",
     "lint-fix": "eslint . --ext .js --fix"
   },
   "eslintConfig": {
@@ -69,5 +71,10 @@
     "husky": "^5.2.0",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1"
-  }
+  },
+  "engines": {
+    "node": ">=12.16"
+  },
+  "author": "Ariel Erviti (https://github.com/arielerv)",
+  "license": "MIT"
 }

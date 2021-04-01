@@ -9,3 +9,16 @@ export const Form = styled(FormFormik).attrs({ noValidate: true })`
   margin-top: 2vh;
   width: 100%;
 `;
+
+export const WrapperInput = styled.div`
+  display: flex;
+  flex-direction: row;
+  color: white;
+  position: relative;
+`;
+
+export const Icon = styled.div`
+  align-self: center;
+  position: absolute;
+  margin-left: 20px;
+`;

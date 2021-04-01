@@ -85,6 +85,13 @@ const registerSuccess = state => ({
   error: initialState.error,
 });
 
+const registerWithoutEmailSuccess = state => ({
+  ...state,
+  isRegistering: initialState.isRegistering,
+  isRegistered: initialState.isRegistered,
+  error: initialState.error,
+});
+
 const registerError = (state, { error }) => ({
   ...state,
   error,
@@ -115,14 +122,14 @@ const verifyEmailRequest = state => ({
   ...state,
   emailExists: initialState.emailExists,
   isValidatingEmail: true,
-  error: initialState.error,
+  errorEmail: initialState.errorEmail,
 });
 
 const verifyEmailSuccess = (state, { emailExists }) => ({
   ...state,
   emailExists,
   isValidatingEmail: initialState.isValidatingEmail,
-  error: initialState.error,
+  errorEmail: initialState.errorEmail,
 });
 
 const verifyEmailError = (state, { errorEmail }) => ({
@@ -191,6 +198,7 @@ const reducer = createReducer(initialState, {
 
   [authTypes.AUTH_REGISTER_REQUEST]: registerRequest,
   [authTypes.AUTH_REGISTER_SUCCESS]: registerSuccess,
+  [authTypes.AUTH_REGISTER_WITHOUT_CONFIRM_SUCCESS]: registerWithoutEmailSuccess,
   [authTypes.AUTH_REGISTER_ERROR]: registerError,
 
   [authTypes.AUTH_CONFIRM_EMAIL_REQUEST]: confirmEmailRequest,

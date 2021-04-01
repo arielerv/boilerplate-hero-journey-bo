@@ -4,7 +4,7 @@ import { Field } from 'formik';
 const placeholder = css`
   opacity: 0.6;
   color: ${props => props.theme.opposite};
-  filter: brightness(150%);
+  filter: brightness(130%);
 `;
 
 export const InputCustom = styled.input.attrs(({ noFormik, type }) => ({
@@ -45,6 +45,55 @@ export const InputCustom = styled.input.attrs(({ noFormik, type }) => ({
     transition: background-color 5000000s ease-in-out 0s;
     background: transparent !important;
     -webkit-text-fill-color: ${props => props.theme.opposite} !important;
+  }
+  &::-webkit-input-placeholder {
+    ${placeholder}
+  }
+  &:-moz-placeholder {
+    ${placeholder}
+  }
+  &:-ms-input-placeholder {
+    ${placeholder}
+  }
+  &::placeholder {
+    ${placeholder}
+  }
+  ${({ $bsStyle }) => $bsStyle || ''}
+`;
+
+export const TextBoxCustom = styled.input.attrs(({ noFormik, type }) => ({
+  as: noFormik ? 'input' : Field,
+  type: type || 'text',
+}))`
+  border: none;
+  border-radius: 25px;
+  text-align: left;
+  display: flex;
+  align-items: flex-end;
+  opacity: 1;
+  background: ${props => props.theme.accent};
+  color: ${props => props.theme.white};
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow: visible;
+  width: 100%;
+  outline: none;
+  text-decoration: none !important;
+  padding: 0 20px;
+  &:-webkit-autofill::first-line {
+    font-size: initial;
+    line-height: inherit;
+    font-family: 'Helvetica', sans-serif;
+  }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    font-family: 'Helvetica', sans-serif;
+    transition: background-color 5000000s ease-in-out 0s;
+    background: transparent !important;
+    -webkit-text-fill-color: ${props => props.theme.white} !important;
   }
   &::-webkit-input-placeholder {
     ${placeholder}

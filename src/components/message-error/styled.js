@@ -9,5 +9,6 @@ export const Error = styled.label`
   justify-content: center;
   color: #7b2020;
   font-family: 'Helvetica', sans-serif;
+  padding-top: 5px;
   ${({ $bsStyle }) => $bsStyle || ''}
 `;
