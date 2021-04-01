@@ -1,4 +1,6 @@
-#Hero's Journey</h2>
+# Hero's Journey Front-End
+![alt text](https://github.com/arielerv/hero-journey/raw/master/public/logo.ico "Logo")
+
 The project is a boilerplate for React and is created with create-react-app.<br/>
 The data flow is in <a href=https://github.com/reduxjs/react-redux>redux</a> and <a href=https://github.com/redux-saga/redux-saga>redux-saga</a>.<br/>
 
@@ -8,7 +10,7 @@ It seeks to have a simple and functional code, for that reason <a href=https://g
 For the handling styles use <a href=https://styled-components.com/docs>styled-components</a>.
 Also has already set a code formatter <a href=https://github.com/prettier/prettier>prettier</a> and husky for the pre-commit based on <a href=https://github.com/conventional-changelog/conventional-changelog>conventional changelog</a>.
 
-##Environment Variables
+## Environment Variables
 Create a ".env" file with:
 ```
   REACT_APP_ENDPOINT=http://localhost:5051
