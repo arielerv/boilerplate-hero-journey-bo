@@ -8,7 +8,6 @@ export const CustomButton = styled.button.attrs(({ type }) => ({ type: type || '
   border-radius: 10px;
   font-family: 'Helvetica', sans-serif;
   font-size: 13px;
-  line-height: 221.4%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,13 +15,14 @@ export const CustomButton = styled.button.attrs(({ type }) => ({ type: type || '
   letter-spacing: 0.05em;
   text-transform: uppercase;
   width: 100%;
-  height: 39px;
   padding: 0 31px;
   border: transparent;
   transform: translate(0, 0);
   max-width: 300px;
   min-height: 39px;
   background: ${props => props.theme.accent};
+  line-height: 39px;
+  height: 39px;
   &:hover {
     color: ${props => props.theme.highAccent};
   }

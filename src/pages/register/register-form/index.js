@@ -29,21 +29,21 @@ const RegisterForm = ({ submitForm, values }) => {
         name="name"
         placeholder="Name"
         onKeyDown={e => (e.charCode || e.keyCode) === 13 && submitForm()}
-        $bsStyle={{ maxWidth: '298px', marginTop: '30px' }}
+        $bsStyle={{ maxWidth: '298px', marginTop: '25px' }}
       />
       <MessageError name="name" />
       <InputCustom
         name="surname"
         placeholder="Surname"
         onKeyDown={e => (e.charCode || e.keyCode) === 13 && submitForm()}
-        $bsStyle={{ maxWidth: '298px', marginTop: '30px' }}
+        $bsStyle={{ maxWidth: '298px', marginTop: '25px' }}
       />
       <MessageError name="surname" />
       <InputCustom
         name="email"
         placeholder="Email"
         onKeyDown={e => (e.charCode || e.keyCode) === 13 && submitForm()}
-        $bsStyle={{ maxWidth: '298px', marginTop: '30px' }}
+        $bsStyle={{ maxWidth: '298px', marginTop: '25px' }}
       />
       <MessageError
         name="email"
@@ -54,7 +54,7 @@ const RegisterForm = ({ submitForm, values }) => {
         name="password"
         placeholder="Password"
         onKeyDown={e => (e.charCode || e.keyCode) === 13 && submitForm()}
-        $bsStyle={{ maxWidth: '298px', marginTop: '30px' }}
+        $bsStyle={{ maxWidth: '298px', marginTop: '25px' }}
       />
       <MessageError name="password" />
       <InputCustom
@@ -62,7 +62,7 @@ const RegisterForm = ({ submitForm, values }) => {
         name="confirmPassword"
         placeholder="Confirm password"
         onKeyDown={e => (e.charCode || e.keyCode) === 13 && submitForm()}
-        $bsStyle={{ maxWidth: '298px', marginTop: '30px' }}
+        $bsStyle={{ maxWidth: '298px', marginTop: '25px' }}
       />
       <MessageError name="confirmPassword" />
       <Check
@@ -70,8 +70,7 @@ const RegisterForm = ({ submitForm, values }) => {
         label="I agree to Hero's Journey"
         $bsStyle={{ margin: '20px 0 30px 0' }}
       />
-      <MessageError name="terms" />
-      <MessageError messageError={errorEmail} />
+      <MessageError name="terms" messageError={errorEmail} />
       <LoadingButton type="submit" label="Submit" isLoading={isLoading} />
     </Form>
   );

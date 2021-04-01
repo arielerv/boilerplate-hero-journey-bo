@@ -15,6 +15,7 @@ const { Types, Creators } = createActions({
 
   authRegisterRequest: ['values'],
   authRegisterSuccess: [],
+  authRegisterWithoutConfirmSuccess: [],
   authRegisterError: ['error'],
 
   authConfirmEmailRequest: ['token'],

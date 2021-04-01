@@ -8,11 +8,12 @@ export const Container = styled.div`
   background: ${props => props.theme.deep};
 `;
 
-export const Title = styled.h1.attrs({ className: 'no-select' })`
+export const Welcome = styled.h1.attrs({ className: 'no-select' })`
   color: ${props => props.theme.highAccent};
   margin: 50px 0;
   text-align: center;
-  font-family: Quicksand, sans-serif;
+  font-family: 'Helvetica', sans-serif;
   letter-spacing: 2px;
-  font-size: 2.5em;
+  font-size: 2.3em;
+  padding: 0 10px;
 `;

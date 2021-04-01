@@ -2,6 +2,7 @@ export const initialState = {
   profile: null,
   token: null,
   error: null,
+  errorEmail: null,
   isLoading: false,
   isValidatingToken: false,
   isAuthorized: false,

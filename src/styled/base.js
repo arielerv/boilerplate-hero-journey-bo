@@ -48,11 +48,11 @@ export const FormGroup = styled.div`
 
 export const Title = styled.h1.attrs({ className: 'no-select' })`
   color: ${props => props.theme.highAccent};
-  margin: 50px 0;
+  margin: 50px 10px;
   text-align: center;
   font-family: Quicksand, sans-serif;
   letter-spacing: 2px;
-  font-size: 2.5em;
+  font-size: 2.3em;
   @media screen and (max-width: 400px) {
     margin: 7px 0 30px 20px;
   }

@@ -7,4 +7,6 @@ export const Container = styled.div`
   align-items: center;
   overflow-y: auto;
   background: ${props => props.theme.deep};
+  place-content: center;
+  padding-bottom: 50px;
 `;
