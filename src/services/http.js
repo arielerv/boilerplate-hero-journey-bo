@@ -12,6 +12,7 @@ const http = create(
           Authorization: `Bearer ${getToken()}`,
           'Content-Type': 'application/json',
           Accept: 'application/json',
+          'Access-Control-Allow-Origin': '*',
         },
         timeout: 20000,
       }
