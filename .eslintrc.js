@@ -20,7 +20,7 @@ module.exports = {
     'no-storage/no-browser-storage': 0,
     'react/destructuring-assignment': 0,
     'no-underscore-dangle': ['warn', { allow: ['__REDUX_DEVTOOLS_EXTENSION__'] }],
-    'no-console': ['warn', { allow: ['clear', 'info', 'error', 'warn'] }],
+    'no-console': ['warn', { allow: ['clear', 'info', 'error'] }],
     'react/prop-types': [1, { ignore: ['children'] }],
     'no-unused-vars': 'warn',
     'react/self-closing-comp': 'warn',

@@ -4,7 +4,7 @@ const routes = {
   LOGIN: '/login',
   PROFILE: '/profile',
   REGISTER: '/register',
-  OTHER: '/other',
+  DICE_ROLLER: '/diceRoller',
   RESET_PASSWORD: '/resetPassword',
   RECOVERY_PASSWORD: '/recoveryPassword',
 };
