@@ -21,6 +21,7 @@ const http = create(
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
+          'Access-Control-Allow-Origin': '*',
         },
         timeout: 20000,
       }
